@@ -1,5 +1,6 @@
 class WasRun:
-    pass
+    def __init__(self, name):
+        self.wasRun = None
 
 
 if __name__ == '__main__':
