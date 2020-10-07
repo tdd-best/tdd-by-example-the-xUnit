@@ -36,11 +36,11 @@ class TestCaseTest(TestCase):
 
     def testSetUp(self):
         self.test.run()
-        assert (self.test.wasSetUp)
+        assert ("setUp" == self.test.log)
 
 
 if __name__ == '__main__':
-    TestCaseTest("testRunning").run()
+    TestCaseTest("testSetUp").run()
     # test = WasRun("testMethod")
     # print test.wasRun
     # test.run()
