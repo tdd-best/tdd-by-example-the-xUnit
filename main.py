@@ -45,8 +45,12 @@ class TestCaseTest(TestCase):
 
 
 class TestResult:
+    def __init__(self):
+        self.runCount = 1
+
     def summary(self):
-        return "1 run, 0 failed"
+        return "%d run, 0 failed" % self.runCount
+        # return "1 run, 0 failed"
 
 
 if __name__ == '__main__':
