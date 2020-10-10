@@ -53,6 +53,12 @@ class TestCaseTest(TestCase):
         result = test.run()
         assert ("1 run, 1 failed", result.summary)
 
+    def testFailedResultFormatting(self):
+        result = TestResult()
+        result.testStarted()
+        result.testFailed()
+        assert ("1 run, 1 failed" == result.summary())
+
 
 class TestResult:
     def __init__(self):
@@ -66,4 +72,4 @@ class TestResult:
 
 
 if __name__ == '__main__':
-    TestCaseTest("testFailedResult").run()
+    TestCaseTest("testFailedResultFormatting").run()
