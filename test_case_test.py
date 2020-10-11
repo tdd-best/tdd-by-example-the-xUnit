@@ -4,6 +4,14 @@ from main import TestCase, WasRun, TestResult
 # import unittest
 
 
+class TestSuite:
+    def __init__(self):
+        self.tests = []
+
+    def add(self, test):
+        self.tests.append(test)
+
+
 class TestCaseTest(TestCase):
 
     def testTemplateMethod(self):
@@ -36,7 +44,8 @@ class TestCaseTest(TestCase):
 
 
 if __name__ == '__main__':
-    print TestCaseTest("testTemplateMethod").run().summary()
-    print TestCaseTest("testResult").run().summary()
-    print TestCaseTest("testFailedResultFormatting").run().summary()
-    print TestCaseTest("testFailedResult").run().summary()
+    TestCaseTest("testSuite").run()
+    # print TestCaseTest("testTemplateMethod").run().summary()
+    # print TestCaseTest("testResult").run().summary()
+    # print TestCaseTest("testFailedResultFormatting").run().summary()
+    # print TestCaseTest("testFailedResult").run().summary()
