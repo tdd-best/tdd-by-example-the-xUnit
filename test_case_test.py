@@ -45,8 +45,16 @@ class TestCaseTest(TestCase):
         suite = TestSuite()
         suite.add(WasRun("testMethod"))
         suite.add(WasRun("testBrokenMethod"))
-        result = suite.run()
+        result = TestResult()
+        suite.run(result)
         assert ("2 run, 1 failed" == result.summary())
+
+    # def testSuite(self):
+    #     suite = TestSuite()
+    #     suite.add(WasRun("testMethod"))
+    #     suite.add(WasRun("testBrokenMethod"))
+    #     result = suite.run()
+    #     assert ("2 run, 1 failed" == result.summary())
 
 
 if __name__ == '__main__':
